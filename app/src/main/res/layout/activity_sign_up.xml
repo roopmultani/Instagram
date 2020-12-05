@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/images" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
+        android:gravity="center"
+        android:text="Sign up to see photos and videos from your frineds."
+        android:textColor="#808080"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/edit_text"
+        android:backgroundTint="#F3F3F3"
+        android:ems="10"
+        android:hint="Mobile Number or Email"
+        android:inputType="textEmailAddress"
+        android:padding="17dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etEmail"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/edit_text"
+        android:backgroundTint="#F3F3F3"
+        android:ems="10"
+        android:hint="Full Name"
+        android:padding="17dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etFullName"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/edit_text"
+        android:backgroundTint="#F3F3F3"
+        android:ems="10"
+        android:hint="Username"
+        android:padding="17dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etUsername"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/edit_text"
+        android:backgroundTint="#F3F3F3"
+        android:ems="10"
+        android:hint="Password"
+        android:padding="17dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etPassword"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="30dp"
+        android:layout_weight="1"
+        android:backgroundTint="#4d94ff"
+        android:ems="10"
+        android:fontFamily="sans-serif-medium"
+        android:padding="15dp"
+        android:text="Sign Up" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSignUp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginRight="22dp"
+        android:gravity="center"
+        android:text="By signing up, you agree to our Terms , Data Policy and Cookies Policy ."
+        android:textColor="#808080"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Have an account?"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvLogIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/tv2"
+        android:text="Log in"
+        android:textColor="#4d94ff"
+        android:textSize="20sp" />
+
+</RelativeLayout>
