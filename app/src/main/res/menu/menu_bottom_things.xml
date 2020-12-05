@@ -3,21 +3,33 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/iHome"
+        android:id="@+id/iInbox"
         android:icon="@drawable/instagram_home_outline_24"
-        android:title="home"
+        android:title=""
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/iSearch"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title=""
         app:showAsAction="always" />
 
     <item
         android:id="@+id/iCompose"
         android:icon="@drawable/instagram_new_post_outline_24"
-        android:title="compose"
+        android:title=""
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/iHeart"
+        android:icon="@drawable/ufi_heart"
+        android:title=""
         app:showAsAction="always" />
 
     <item
         android:id="@+id/iProfile"
         android:icon="@drawable/instagram_user_outline_24"
-        android:title="profile"
+        android:title=""
         app:showAsAction="always" />
 
 </menu>

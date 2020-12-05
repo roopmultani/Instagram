@@ -7,13 +7,18 @@
 
     <application
         android:name=".ParseApplication"
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.InstragramClone">
+        android:theme="@style/Theme.InstragramClone"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".UserDetailActivity"></activity>
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".CommentActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".fragments.EditActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -32,7 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

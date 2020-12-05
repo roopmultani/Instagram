@@ -1,15 +1,19 @@
 package com.example.instragramclone.fragments;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
@@ -19,6 +23,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -53,17 +59,9 @@ public class ComposeFragment extends Fragment {
 
     public ComposeFragment() {
         // Required empty public constructor
+
     }
 
-
-   /* @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,6 +73,7 @@ public class ComposeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
 
         etDescription = view.findViewById(R.id.etDescription);
         btnCaptureImg = view.findViewById(R.id.btnCaptureImg);
@@ -112,7 +111,8 @@ public class ComposeFragment extends Fragment {
             }
         });
     }
-       /* private void goLoginActivity() {
+
+        /* private void goLoginActivity() {
             Intent i = new Intent(getContext(), LoginActivity.class);
             startActivity(i);
         }*/
@@ -186,6 +186,35 @@ public class ComposeFragment extends Fragment {
                 ivPostImg.setImageResource(0);
             }
         });
+    }
+
+    private void queryPosts() {
+        // Specify which class to query
+        ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
+        query.include(Post.KEY_USER);
+        // query.setLimit(25);
+        // query.addDescendingOrder(Post.KEY_CREATED_KEY);
+
+        query.findInBackground(new FindCallback<Post>() {
+            @Override
+            public void done(List<Post> posts, ParseException e) {
+                if (e !=null ) {
+                    Log.e(TAG, "issue with getting post", e);
+                    return;
+                }
+
+                for( Post post : posts ){
+                    Log.i(TAG, "Post:" + post.getDescription() + ", username:" + post.getUser().getUsername());
+                }
+
+                //allPosts.addAll(posts);
+                //adapter.notifyDataSetChanged();
+            }
+        });
+    }
+
+    private void setLikeListners(){
+
     }
 }
 

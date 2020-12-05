@@ -48,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         etPassword=findViewById(R.id.etPassword);
         btnLogin=findViewById(R.id.btnLogin);
         btnSignUp=findViewById(R.id.btnSignUp);
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,12 +62,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create the ParseUser
-                ParseUser user = new ParseUser();
+             //   ParseUser user = new ParseUser();
                 // Set core properties
-                user.setUsername(etUsername.getText().toString());
-                user.setPassword(etPassword.getText().toString());
+             //   user.setUsername(etUsername.getText().toString());
+             //   user.setPassword(etPassword.getText().toString());
                 // Invoke signUpInBackground
-                user.signUpInBackground(new SignUpCallback() {
+               /* user.signUpInBackground(new SignUpCallback() {
                     public void done(ParseException e) {
                         if (e == null) {
                             Log.i(TAG, "Sign up successfull");
@@ -78,12 +79,23 @@ public class LoginActivity extends AppCompatActivity {
 
                         }
                     }
-                });
+                });*/
+
+                ParseUser.logOut();
+                ParseUser currentUser = ParseUser.getCurrentUser();// this will now be null
+                goSignUpActivity();
+               // Toast.makeText(LoginActivity.this, "Sign Up", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
-            private void loginUser(String username, String password) {
+
+    private void goSignUpActivity() {
+        Intent i = new Intent(LoginActivity.this, SignUpActivity.class);
+        startActivity(i);
+    }
+
+    private void loginUser(String username, String password) {
                 Log.i(TAG, "attempting to login user " + username);
                 ParseUser.logInInBackground(username,password, new LogInCallback() {
                     @Override
@@ -102,11 +114,8 @@ public class LoginActivity extends AppCompatActivity {
             }
 
     private void goMainActivity() {
-                Intent i = new Intent(this, MainActivity.class);
-                startActivity(i);
-                finish();
-
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        finish();
     }
-
-
 }

@@ -8,19 +8,6 @@
     android:layout_alignParentBottom="true"
     android:orientation="vertical">
 
-
-
-    <EditText
-        android:id="@+id/etDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:hint="Description..."
-        android:textColor="#FFFFFF" />
-
     <Button
         android:id="@+id/btnCaptureImg"
         android:layout_width="match_parent"
@@ -37,9 +24,20 @@
         android:layout_height="200dp"
         tools:srcCompat="@tools:sample/avatars" />
 
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:hint="Add Caption"
+        android:textColor="#050505" />
+
     <Button
         android:id="@+id/btnSubmit"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
@@ -50,8 +48,9 @@
 
     <ProgressBar
         android:id="@+id/pbLoading"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:visibility="invisible"/>
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_marginTop="50dp"
+        android:visibility="invisible" />
 
 </LinearLayout>

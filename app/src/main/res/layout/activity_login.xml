@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,19 +9,11 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
-    <TextView
-        android:id="@+id/tvInsta"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_weight="1"
-        android:fontFamily="@font/bilbo_swash_caps"
-        android:text="Instagram"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#92609A"
-        android:textSize="46sp"
-        android:textStyle="bold|italic" />
+        android:layout_height="90dp"
+        app:srcCompat="@drawable/images" />
 
     <EditText
         android:id="@+id/etUsername"
@@ -71,4 +64,18 @@
         android:padding="13dp"
         android:backgroundTint="#70BD74"
         android:text="Sign up " />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSignUp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="35dp"
+        android:gravity="center"
+        android:text="Don't have an account? Sign up"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
 </LinearLayout>
